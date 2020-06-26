@@ -11,6 +11,7 @@ Find two lines, which together with x-axis forms a container, such that the cont
 
 ## Time: O(n), Space: O(1) --> we need fixed number of variables
 
+# Iterative approach
 def maxArea(height):
     maxArea, i, j = 0, 0, len(height) - 1
     while i < j:
