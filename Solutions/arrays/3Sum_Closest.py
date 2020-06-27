@@ -16,7 +16,7 @@ def threeSumClosest(nums, target):
     nums.sort()
     diff = float('inf')
     res = None
-    
+    # To slightly improve the performance by excluding special cases
     if sum(nums[:3]) >= target:
         return sum(nums[:3])
     # fix one number first
@@ -29,13 +29,13 @@ def threeSumClosest(nums, target):
             # perfect case
             if nums[j] + nums[k] == comp:
                 return target
-            # temporal difference
+            # current difference
             temp = abs(nums[j] + nums[k] - comp)
             # Update difference if necessary
             if temp < diff:
                 diff = temp
                 res = nums[i] + nums[j] + nums[k]
-            
+            # Move the two pointers
             if nums[j] + nums[k] < comp:
                 j += 1
             else:
